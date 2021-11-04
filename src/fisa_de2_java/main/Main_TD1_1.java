@@ -1,4 +1,4 @@
-package fisa_de2_java;
+package fisa_de2_java.main;
 
 public class Main_TD1_1 {
 

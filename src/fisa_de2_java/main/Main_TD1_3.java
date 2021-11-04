@@ -1,4 +1,6 @@
-package fisa_de2_java;
+package fisa_de2_java.main;
+
+import fisa_de2_java.model.TypeAccount;
 
 public class Main_TD1_3 {
 
