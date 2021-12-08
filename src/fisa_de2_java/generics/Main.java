@@ -1,6 +1,7 @@
 package fisa_de2_java.generics;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Main {
@@ -18,6 +19,31 @@ public class Main {
 		return result;
 	}
 
+	// definition of a bounded type generic method
+	public static <T extends Animal> List<T> fromArrayOfAnimalsToList(T[] array) {
+
+		List<T> result = new ArrayList<>();
+
+		for (T item : array) {
+
+			result.add(item);
+		}
+
+		return result;
+	}
+	
+	// usage of wildcard
+	public static Collection<Animal> mergeAnimals(Collection<? extends Animal> first, Collection<? extends Animal> second) {
+		
+		Collection<Animal> result = new ArrayList<>();
+		
+		result.addAll(first);
+		
+		result.addAll(second);
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
 
 		// Without generics
@@ -72,6 +98,34 @@ public class Main {
 		box2.add("Message", "Hello World");
 		System.out.println("String Value : " + box2.getFirst());
 		System.out.println("String Value : " + box2.getSecond());
+		
+		Cat[] cats_array = {
+				new Cat(),
+				new Cat(),
+				new Cat()
+		};
+		
+		List<Cat> cats_list = fromArrayOfAnimalsToList(cats_array);
+
+		for (Cat cat : cats_list) {
+
+			System.out.println(cat);
+		}
+		
+		Dog[] dogs_array = {
+				new Dog(),
+				new Dog(),
+				new Dog()
+		};
+		
+		List<Dog> dogs_list = fromArrayOfAnimalsToList(dogs_array);
+		
+		Collection<Animal> animals = mergeAnimals(cats_list, dogs_list);
+		
+		for (Animal animal : animals) {
+
+			System.out.println(animal);
+		}
 	}
 
 }
