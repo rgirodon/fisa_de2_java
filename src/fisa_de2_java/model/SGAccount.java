@@ -1,6 +1,6 @@
 package fisa_de2_java.model;
 
-public class Account implements IAccount {
+public class SGAccount implements IAccount {
 
 	private double balance;
 	
@@ -12,7 +12,7 @@ public class Account implements IAccount {
 	
 	private double decouvertAutorise;
 	
-	public Account() {
+	public SGAccount() {
 		
 		this.balance = 0.0;
 		
@@ -25,7 +25,7 @@ public class Account implements IAccount {
 		this.plafond = 0.0;
 	}
 	
-	public Account(double balance, long number) {
+	public SGAccount(double balance, long number) {
 		
 		this.balance = balance;
 		
@@ -42,7 +42,7 @@ public class Account implements IAccount {
 	@Override
 	public void display() {
 		
-		System.out.println("Account [type=" + this.type + ", number=" + this.number + ", balance=" + this.balance + "]");
+		System.out.println("SG Account [type=" + this.type + ", number=" + this.number + ", balance=" + this.balance + "]");
 	}
 	
 	@Override
