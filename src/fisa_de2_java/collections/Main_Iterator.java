@@ -16,12 +16,10 @@ public class Main_Iterator {
 		
 		list_of_strings.add("Wassim");
 		
-		list_of_strings.add(1, "Rebecca");
+		list_of_strings.add("Rebecca");
 		
-		list_of_strings.set(2, "Sam");
-		
-		list_of_strings.remove(3);
-		
+		list_of_strings.add("Sam");
+				
 		Iterator<String> iterator = list_of_strings.iterator();
 		
 		while (iterator.hasNext()) {

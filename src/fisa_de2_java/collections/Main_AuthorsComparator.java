@@ -15,7 +15,14 @@ public class Main_AuthorsComparator {
 		
 		list_of_authors.add(new Author("Wassim", "Chamga", 1857));
 
-		Collections.sort(list_of_authors, new AuthorComparator());
+		Collections.sort(list_of_authors, new AuthorFirstNameComparator());
+		
+		for (Author author : list_of_authors) {
+			
+			System.out.println(author);
+		}
+		
+		Collections.sort(list_of_authors, new AuthorLastNameComparator());
 		
 		for (Author author : list_of_authors) {
 			

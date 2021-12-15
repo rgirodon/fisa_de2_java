@@ -6,6 +6,7 @@ public class Main_HashSet {
 
 	public static void main(String[] args) {
 		
+		/*
 		HashSet<String> set_of_strings = new HashSet<>();
 
 		set_of_strings.add("Rémy");
@@ -23,6 +24,22 @@ public class Main_HashSet {
 		for (String firstname : set_of_strings) {
 			
 			System.out.println(firstname);
+		}
+		*/
+		
+		HashSet<Student> set_of_students = new HashSet<>();
+		
+		set_of_students.add(new Student("Barack", "Obama"));
+		
+		set_of_students.add(new Student("Georges W", "Bush"));
+		
+		set_of_students.add(new Student("Donald", "Trump"));
+		
+		set_of_students.add(new Student("Barack", "Obama"));
+		
+		for (Student student : set_of_students) {
+			
+			System.out.println(student);
 		}
 	}
 

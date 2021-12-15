@@ -10,6 +10,8 @@ public class Main_TreeSetOfAuthors {
 
 		set_of_authors.add(new Author("Rémy", "Girodon", 1978));
 		
+		set_of_authors.add(new Author("Arthur", "Michels", 1416));
+		
 		set_of_authors.add(new Author("Daniel", "Smith", 1990));
 		
 		set_of_authors.add(new Author("Wassim", "Chamga", 1857));
