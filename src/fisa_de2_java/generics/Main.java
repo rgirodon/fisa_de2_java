@@ -19,6 +19,7 @@ public class Main {
 		return result;
 	}
 
+	/*
 	// definition of a bounded type generic method
 	public static <T extends Animal> List<T> fromArrayOfAnimalsToList(T[] array) {
 
@@ -43,33 +44,42 @@ public class Main {
 		
 		return result;
 	}
+	*/
 	
 	public static void main(String[] args) {
 
+		/*
 		// Without generics
 
 		List list_without_generics = new ArrayList();
 
 		Integer added_without_generics = Integer.valueOf(1);
 
+		String str_added_without_generics = "Str";
+		
 		list_without_generics.add(added_without_generics);
+		
+		list_without_generics.add(str_added_without_generics);
 
 		Integer retrieved_without_generics = (Integer) list_without_generics.get(0);
+		
+		String str_retrieved_without_generics = (String) list_without_generics.get(1);
 
-		System.out.println("Retrieved without generics : " + retrieved_without_generics);
+		System.out.println("Retrieved without generics : " + retrieved_without_generics + " / " + str_retrieved_without_generics);
 
 		// With generics
 
 		List<Integer> list_with_generics = new ArrayList<>();
 
 		Integer added_with_generics = Integer.valueOf(1);
-
+		
 		list_with_generics.add(added_with_generics);
-
+		
 		Integer retrieved_with_generics = list_with_generics.get(0);
 
 		System.out.println("Retrieved with generics : " + retrieved_with_generics);
-
+		*/
+		
 		// calls to generic method
 		Integer[] integer_array = { 1, 2, 3 };
 
@@ -89,6 +99,8 @@ public class Main {
 			System.out.println(item);
 		}
 
+		
+		/*
 		Box<Integer, String> box1 = new Box<Integer, String>();
 		box1.add(Integer.valueOf(10), "Hello World");
 		System.out.println("Integer Value : " + box1.getFirst());
@@ -126,6 +138,7 @@ public class Main {
 
 			System.out.println(animal);
 		}
+		*/
 	}
 
 }
