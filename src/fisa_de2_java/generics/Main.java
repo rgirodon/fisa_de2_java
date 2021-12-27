@@ -19,7 +19,7 @@ public class Main {
 		return result;
 	}
 
-	/*
+	
 	// definition of a bounded type generic method
 	public static <T extends Animal> List<T> fromArrayOfAnimalsToList(T[] array) {
 
@@ -33,8 +33,10 @@ public class Main {
 		return result;
 	}
 	
+	
 	// usage of wildcard
-	public static Collection<Animal> mergeAnimals(Collection<? extends Animal> first, Collection<? extends Animal> second) {
+	public static Collection<Animal> mergeAnimals(Collection<? extends Animal> first, 
+													Collection<? extends Animal> second) {
 		
 		Collection<Animal> result = new ArrayList<>();
 		
@@ -44,7 +46,7 @@ public class Main {
 		
 		return result;
 	}
-	*/
+	
 	
 	public static void main(String[] args) {
 
@@ -80,6 +82,7 @@ public class Main {
 		System.out.println("Retrieved with generics : " + retrieved_with_generics);
 		*/
 		
+		/*
 		// calls to generic method
 		Integer[] integer_array = { 1, 2, 3 };
 
@@ -98,24 +101,30 @@ public class Main {
 
 			System.out.println(item);
 		}
-
+		*/
 		
-		/*
-		Box<Integer, String> box1 = new Box<Integer, String>();
+		
+		Box<Integer, String> box1 = new Box<>();
 		box1.add(Integer.valueOf(10), "Hello World");
 		System.out.println("Integer Value : " + box1.getFirst());
 		System.out.println("String Value : " + box1.getSecond());
 
-		Box<String, String> box2 = new Box<String, String>();
+		Box<String, String> box2 = new Box<>();
 		box2.add("Message", "Hello World");
 		System.out.println("String Value : " + box2.getFirst());
 		System.out.println("String Value : " + box2.getSecond());
 		
+		Box<Cat, Dog> box3 = new Box<>();
+		box3.add(new Cat(), new Dog());
+		System.out.println("Cat Value : " + box3.getFirst());
+		System.out.println("Dog Value : " + box3.getSecond());
+		
+		/*
 		Cat[] cats_array = {
 				new Cat(),
 				new Cat(),
 				new Cat()
-		};
+		};		
 		
 		List<Cat> cats_list = fromArrayOfAnimalsToList(cats_array);
 
@@ -132,6 +141,27 @@ public class Main {
 		
 		List<Dog> dogs_list = fromArrayOfAnimalsToList(dogs_array);
 		
+		for (Dog dog : dogs_list) {
+
+			System.out.println(dog);
+		}
+		
+		/*
+		Robot[] robots_array = {
+				new Robot(),
+				new Robot(),
+				new Robot()
+		};
+		
+		List<Robot> robots_list = fromArrayOfAnimalsToList(robots_array);
+		
+		for (Robot robot : robots_list) {
+
+			System.out.println(robot);
+		}
+		*/
+		
+		/*
 		Collection<Animal> animals = mergeAnimals(cats_list, dogs_list);
 		
 		for (Animal animal : animals) {
@@ -139,6 +169,7 @@ public class Main {
 			System.out.println(animal);
 		}
 		*/
+		
 	}
 
 }
