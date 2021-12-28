@@ -1,7 +1,12 @@
 package fisa_de2_java.lambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class Main_Lambda {
 
@@ -62,6 +67,7 @@ public class Main_Lambda {
 	
 	public static void main(String[] args) {
 		
+		/*
 		List<Person> minors = findPersonsWithAgeLower(DATA, 18);
 		
 		System.out.println(minors.size() + " persons found");
@@ -84,5 +90,31 @@ public class Main_Lambda {
 		List<Person> minorsWithLambda = findPersons(DATA, person -> person.age <= 18);
 		
 		System.out.println(minorsWithLambda.size() + " persons found with lambda");
+		*/
+		
+		/*
+		List<String> strings = Arrays.asList("Rémy", "Olivier", "Girodon");
+		
+		strings.forEach(
+				s -> System.out.println(s.length())
+		);
+		
+		
+		Collections.sort(DATA, (p1, p2) -> p2.age.compareTo(p1.age));
+		
+		System.out.println(DATA);
+		*/
+		
+		Map<String, Integer> myMap = new HashMap<>();
+		myMap.put("Rémy", 4);
+		myMap.put("Olivier", 7);
+		
+		myMap.computeIfAbsent("Arthur", s -> s.length());
+		
+		System.out.println(myMap.get("Arthur"));
+		
+		myMap.computeIfPresent("Arthur", (s, i) -> i*2);
+		
+		System.out.println(myMap.get("Arthur"));
 	}
 }
