@@ -69,5 +69,16 @@ public class Main_Lambda {
 		List<Person> minorsWithConcreteClass = findPersons(DATA, new AgeLowerPersonMatcher());
 		
 		System.out.println(minorsWithConcreteClass.size() + " persons found with concrete class");
+		
+		List<Person> minorsWithInnerClass = findPersons(DATA, new PersonMatcher() {
+			
+			@Override
+			public boolean match(Person person) {
+				
+				return person.age <= 18;
+			}
+		});
+		
+		System.out.println(minorsWithInnerClass.size() + " persons found with inner class");
 	}
 }
