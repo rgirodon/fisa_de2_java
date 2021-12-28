@@ -80,5 +80,9 @@ public class Main_Lambda {
 		});
 		
 		System.out.println(minorsWithInnerClass.size() + " persons found with inner class");
+		
+		List<Person> minorsWithLambda = findPersons(DATA, person -> person.age <= 18);
+		
+		System.out.println(minorsWithLambda.size() + " persons found with lambda");
 	}
 }
