@@ -45,10 +45,29 @@ public class Main_Lambda {
 		return result;
 	}
 	
+	public static List<Person> findPersons(List<Person> persons, PersonMatcher matcher) {
+		
+		List<Person> result = new ArrayList<>();
+		
+		for (Person person : persons) {
+			
+			if (matcher.match(person)) {
+				
+				result.add(person);
+			}
+		}
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		
 		List<Person> minors = findPersonsWithAgeLower(DATA, 18);
 		
 		System.out.println(minors.size() + " persons found");
+		
+		List<Person> minorsWithConcreteClass = findPersons(DATA, new AgeLowerPersonMatcher());
+		
+		System.out.println(minorsWithConcreteClass.size() + " persons found with concrete class");
 	}
 }
