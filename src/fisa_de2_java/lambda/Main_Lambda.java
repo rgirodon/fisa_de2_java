@@ -45,6 +45,21 @@ public class Main_Lambda {
 		return result;
 	}
 	
+	public static List<Person> findPersonsByGender(List<Person> persons, Gender gender) {
+		
+		List<Person> result = new ArrayList<>();
+		
+		for (Person person : persons) {
+			
+			if (person.gender == gender) {
+				
+				result.add(person);
+			}
+		}
+		
+		return result;
+	}
+	
 	public static List<Person> findPersons(List<Person> persons, PersonMatcher matcher) {
 		
 		List<Person> result = new ArrayList<>();
@@ -84,5 +99,30 @@ public class Main_Lambda {
 		List<Person> minorsWithLambda = findPersons(DATA, person -> person.age <= 18);
 		
 		System.out.println(minorsWithLambda.size() + " persons found with lambda");
+		
+		System.out.println("----------------------------------------------------");
+		
+		List<Person> men = findPersonsByGender(DATA, Gender.MAN);
+		
+		System.out.println(men.size() + " men found");
+		
+		List<Person> menWithConcreteClass = findPersons(DATA, new ManGenderPersonMatcher());
+		
+		System.out.println(menWithConcreteClass.size() + " men found with concrete class");
+		
+		List<Person> menWithInnerClass = findPersons(DATA, new PersonMatcher() {
+			
+			@Override
+			public boolean match(Person person) {
+				
+				return person.gender == Gender.MAN;
+			}
+		});
+		
+		System.out.println(menWithInnerClass.size() + " men found with inner class");
+		
+		List<Person> menWithLambda = findPersons(DATA, person -> person.gender == Gender.MAN);
+		
+		System.out.println(menWithLambda.size() + " men found with lambda");
 	}
 }
