@@ -1,149 +1,85 @@
 package fisa_de2_java.model;
 
-public class Account implements IAccount {
+public class Account {
 
 	private double balance;
 	
 	private long number;
 	
-	private TypeAccount type;
-	
-	private double plafond;
-	
-	private double decouvertAutorise;
+	private TypeAccount typeAccount;
 	
 	public Account() {
 		
-		this.balance = 0.0;
+		this.balance = 0;
 		
-		this.number = 0L;
+		this.number = 0;
 		
-		this.type = TypeAccount.CURRENT;
-		
-		this.decouvertAutorise = 0.0;
-		
-		this.plafond = 0.0;
+		this.typeAccount = TypeAccount.CURRENT;
 	}
 	
-	public Account(double balance, long number) {
+	public Account(double balance, long number, TypeAccount typeAccount) {
 		
 		this.balance = balance;
 		
 		this.number = number;
 		
-		this.type = TypeAccount.CURRENT;
-		
-		this.decouvertAutorise = 0.0;
-		
-		this.plafond = 0.0;
+		this.typeAccount = typeAccount;
 	}
-
 	
-	@Override
 	public void display() {
 		
-		System.out.println("Account [type=" + this.type + ", number=" + this.number + ", balance=" + this.balance + "]");
+		System.out.println("Account [typeAccount=" + this.typeAccount + ", number=" + this.number + ", balance=" + this.balance + "]");
 	}
 	
-	@Override
 	public void withdraw(double amount) {
 		
-		if (this.isPossibleWithdraw(amount)) {
+		if (this.checkWithdraw(amount)) {
 		
 			this.balance -= amount;
 		}
-		else {
-			System.out.println("Withdraw impossible");
-		}
 	}
 	
-	
-	public boolean isPossibleWithdraw(double amount) {
-
-		boolean result = true;
-		
-		if (this.type == TypeAccount.SAVINGS) {
-			
-			if ((this.balance - amount) < 0.0) {
-				
-				result = false;
-			}
-		}
-		else {
-			if ((this.balance - amount) < (-this.decouvertAutorise)) {
-				
-				result = false;
-			}
-		}
-		
-		return result;
-	}
-
-	@Override
 	public void credit(double amount) {
 		
-		if (this.isPossibleCredit(amount)) {
+		if (this.checkCredit(amount)) {
 		
 			this.balance += amount;
 		}
-		else {
-			System.out.println("Credit impossible");
-		}
 	}
-
 	
-	public boolean isPossibleCredit(double amount) {
+	private boolean checkCredit(double amount) {
 		
-		boolean result = true;
+		return true;
+	}
+	
+	private boolean checkWithdraw(double amount) {
 		
-		if (this.type == TypeAccount.SAVINGS) {
-			
-			if ((this.balance + amount) > this.plafond) {
-				
-				result = false;
-			}
-		}
-		
-		return result;
+		return true;
 	}
 
-	@Override
 	public double getBalance() {
 		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
 	}
 
 	public long getNumber() {
 		return number;
 	}
 
-	@Override
 	public void setNumber(long number) {
 		this.number = number;
 	}
 
-	public TypeAccount getType() {
-		return type;
+	public TypeAccount getTypeAccount() {
+		return typeAccount;
 	}
 
-	@Override
-	public void setType(TypeAccount type) {
-		this.type = type;
+	public void setTypeAccount(TypeAccount typeAccount) {
+		this.typeAccount = typeAccount;
 	}
 	
-	public double getPlafond() {
-		return plafond;
-	}
-
-	@Override
-	public void setPlafond(double plafond) {
-		this.plafond = plafond;
-	}
-
-	public double getDecouvertAutorise() {
-		return decouvertAutorise;
-	}
-
-	public void setDecouvertAutorise(double decouvertAutorise) {
-		this.decouvertAutorise = decouvertAutorise;
-	}
+	
 }
