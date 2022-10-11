@@ -14,8 +14,13 @@ public class DemoStaticFields {
 		
 		public void displayNbInstances() {
 			
-			System.out.println(DemoStaticFields.INSTANCES_COUNTER);
+			System.out.println("From a nested class instance method : " + DemoStaticFields.INSTANCES_COUNTER);
 		}
+	}
+	
+	public static void displayNbInstances() {
+		
+		System.out.println("From a static method : " + DemoStaticFields.INSTANCES_COUNTER);
 	}
 	
 	public DemoStaticFields() {
