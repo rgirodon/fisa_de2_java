@@ -1,6 +1,12 @@
 package fisa_de2_java.main;
 
+
+import static fisa_de2_java.main.DemoStaticFields.*;
+
+import static fisa_de2_java.model.CircleService.*;
+
 import fisa_de2_java.model.Account;
+import fisa_de2_java.model.Circle;
 import fisa_de2_java.model.TypeAccount;
 
 /**
@@ -55,7 +61,7 @@ public class HelloWorldApp2 {
 		System.out.println(sum);
 		*/
 		
-		
+		/*
 		Account account1 = new Account();
 		
 		account1.setNumber(1111L);
@@ -78,5 +84,16 @@ public class HelloWorldApp2 {
 		account2.withdraw(150.0);
 		
 		account2.display();
+		*/
+		
+		// displayNbInstances();
+		
+		Circle c1 = new Circle(22.0);
+		
+		Circle c2 = new Circle(14.0);
+		
+		System.out.println(computePerimeter(c1));
+		
+		System.out.println(computeArea(c2));
 	}
 }
