@@ -37,19 +37,25 @@ public abstract class Account {
 		return "typeAccount=" + this.typeAccount + ", number=" + this.number + ", balance=" + this.balance;
 	}
 	
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws WithdrawImpossibleException {
 		
 		if (this.checkWithdraw(amount)) {
 		
 			this.balance -= amount;
 		}
+		else {
+			throw new WithdrawImpossibleException();
+		}
 	}
 	
-	public void credit(double amount) {
+	public void credit(double amount) throws CreditImpossibleException {
 		
 		if (this.checkCredit(amount)) {
 		
 			this.balance += amount;
+		}
+		else {
+			throw new CreditImpossibleException();
 		}
 	}
 	
