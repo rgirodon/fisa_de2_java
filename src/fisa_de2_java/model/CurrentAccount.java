@@ -20,10 +20,4 @@ public class CurrentAccount extends Account {
 		
 		return true;
 	}
-
-	@Override
-	public void display() {
-		
-		System.out.println("Current account, Number : " + this.getNumber() + ", Balance : " + this.getBalance());
-	}
 }

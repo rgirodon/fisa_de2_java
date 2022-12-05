@@ -15,7 +15,6 @@ public class Main_TD2_1 {
 	public static void main(String[] args) {
 		
 		Account a1 = new CurrentAccount(1L, 100.0, 100.0);
-		a1.setNumber(1L);
 		a1.credit(100.0);
 		a1.withdraw(50.0);
 	

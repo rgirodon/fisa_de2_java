@@ -20,10 +20,4 @@ public class SavingAccount extends Account {
 		
 		return ((this.getBalance() + amount) <= this.plafond);
 	}
-
-	@Override
-	public void display() {
-		
-		System.out.println("Saving account, Number : " + this.getNumber() + ", Balance : " + this.getBalance());
-	}
 }
