@@ -3,10 +3,14 @@ package fisa_de2_java.main;
 
 import static fisa_de2_java.main.DemoStaticFields.*;
 
-import static fisa_de2_java.model.CircleService.*;
-
 import fisa_de2_java.model.Account;
 import fisa_de2_java.model.Circle;
+import fisa_de2_java.model.CircleService;
+import fisa_de2_java.model.CurrentAccount;
+import fisa_de2_java.model.Customer;
+import fisa_de2_java.model.ISalutationer;
+import fisa_de2_java.model.SalutationerFactory;
+import fisa_de2_java.model.SavingAccount;
 import fisa_de2_java.model.TypeAccount;
 
 /**
@@ -88,12 +92,49 @@ public class HelloWorldApp2 {
 		
 		// displayNbInstances();
 		
-		Circle c1 = new Circle(22.0);
-		
+		/*
+		Circle c1 = new Circle(22.0);		
 		Circle c2 = new Circle(14.0);
 		
-		System.out.println(computePerimeter(c1));
+		System.out.println(CircleService.computePerimeter(c1));
+		System.out.println(CircleService.computeArea(c1));
 		
-		System.out.println(computeArea(c2));
+		System.out.println(CircleService.computePerimeter(c2));
+		System.out.println(CircleService.computeArea(c2));
+		*/
+		
+		/*
+		Customer customer1 = new Customer("Jean", "Dupont");
+		customer1.addAccount(new SavingAccount(111, 111.11, 12000));
+		
+		CurrentAccount cc1 = new CurrentAccount(112, 112.12, 1000);
+		cc1.withdraw(500);
+		customer1.addAccount(cc1);
+		
+		Customer customer2 = new Customer("Jeanne", "Durand");
+		
+		CurrentAccount cc2 = new CurrentAccount(222, 222.22, 1000);
+		cc2.withdraw(5000);
+		customer2.addAccount(cc2);
+		
+		customer1.display();
+		customer2.display();
+		*/
+		
+		/*
+		ISalutationer salutationer = SalutationerFactory.provideSalutationer();
+				
+		salutationer.salute();
+		*/	
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 	}
 }

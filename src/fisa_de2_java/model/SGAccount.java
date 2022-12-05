@@ -134,7 +134,6 @@ public class SGAccount implements IAccount {
 		return plafond;
 	}
 
-	@Override
 	public void setPlafond(double plafond) {
 		this.plafond = plafond;
 	}

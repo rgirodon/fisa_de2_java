@@ -1,6 +1,6 @@
 package fisa_de2_java.model;
 
-public class Account {
+public abstract class Account {
 
 	private double balance;
 	
@@ -47,15 +47,9 @@ public class Account {
 		}
 	}
 	
-	private boolean checkCredit(double amount) {
-		
-		return true;
-	}
+	public abstract boolean checkCredit(double amount);
 	
-	private boolean checkWithdraw(double amount) {
-		
-		return true;
-	}
+	public abstract boolean checkWithdraw(double amount);
 
 	public double getBalance() {
 		return balance;

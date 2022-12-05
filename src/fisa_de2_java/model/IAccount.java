@@ -6,17 +6,14 @@ public interface IAccount {
 	
 	void credit(double amount);
 	
-	double getBalance();
-	
 	void display();
-	
+		 
+	double getBalance();
+	  
 	void setNumber(long number);
-	
-	void setPlafond(double plafond);
 	
 	void setType(TypeAccount type);
 	
-	/*
 	default boolean isPossibleWithdraw(double amount) {
 		
 		return true;
@@ -26,5 +23,4 @@ public interface IAccount {
 		
 		return true;
 	}
-	*/
 }
