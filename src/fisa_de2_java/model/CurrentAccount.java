@@ -20,4 +20,10 @@ public class CurrentAccount extends Account {
 		
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return super.toString() + ", decouvertAutorisé = " + this.decouvertAutorise;
+	}
 }

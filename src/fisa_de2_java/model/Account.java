@@ -28,7 +28,13 @@ public abstract class Account {
 	
 	public void display() {
 		
-		System.out.println("Account [typeAccount=" + this.typeAccount + ", number=" + this.number + ", balance=" + this.balance + "]");
+		System.out.println("Account [" + this.toString() + "]");
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "typeAccount=" + this.typeAccount + ", number=" + this.number + ", balance=" + this.balance;
 	}
 	
 	public void withdraw(double amount) {

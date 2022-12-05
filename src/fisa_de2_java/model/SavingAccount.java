@@ -20,4 +20,10 @@ public class SavingAccount extends Account {
 		
 		return ((this.getBalance() + amount) <= this.plafond);
 	}
+	
+	@Override
+	public String toString() {
+		
+		return super.toString() + ", plafond = " + this.plafond;
+	}
 }
