@@ -1,12 +1,13 @@
 package fisa_de2_java.collections;
 
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Main_LinkedHashSet {
 
 	public static void main(String[] args) {
 		
-		LinkedHashSet<String> set_of_strings = new LinkedHashSet<>();
+		Set<String> set_of_strings = new LinkedHashSet<>();
 
 		set_of_strings.add("Rémy");
 		

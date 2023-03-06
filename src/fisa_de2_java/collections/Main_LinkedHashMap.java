@@ -17,6 +17,8 @@ public class Main_LinkedHashMap {
 		map_of_strings.put(7, "Figo");
 		
 		map_of_strings.remove(9);
+		
+		map_of_strings.put(10, "Leo");
 								
 		for (Integer number : map_of_strings.keySet()) {
 			

@@ -1,6 +1,7 @@
 package fisa_de2_java.collections;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main_LinkedList {
 

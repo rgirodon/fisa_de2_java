@@ -22,6 +22,8 @@ public class Main_AuthorsComparator {
 			System.out.println(author);
 		}
 		
+		System.out.println("------------------------------");
+		
 		Collections.sort(list_of_authors, new AuthorLastNameComparator());
 		
 		for (Author author : list_of_authors) {

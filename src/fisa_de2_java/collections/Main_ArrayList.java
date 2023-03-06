@@ -21,17 +21,21 @@ public class Main_ArrayList {
 		
 		list_of_strings.remove(3);
 		
-		/*
+		list_of_strings.add("Rémy");
+		
+		
 		for (String firstname : list_of_strings) {
 			
 			System.out.println(firstname);
 		}
-		*/
 		
+		
+		/*
 		for (int i = 0; i < list_of_strings.size(); i++) {
 			
 			System.out.println(list_of_strings.get(i));
 		}
+		*/
 	}
 
 }

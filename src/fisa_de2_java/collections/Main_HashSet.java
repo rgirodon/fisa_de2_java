@@ -1,13 +1,14 @@
 package fisa_de2_java.collections;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Main_HashSet {
 
 	public static void main(String[] args) {
 		
-		/*
-		HashSet<String> set_of_strings = new HashSet<>();
+		
+		Set<String> set_of_strings = new HashSet<>();
 
 		set_of_strings.add("Rémy");
 		
@@ -25,8 +26,9 @@ public class Main_HashSet {
 			
 			System.out.println(firstname);
 		}
-		*/
 		
+		
+		/*
 		HashSet<Student> set_of_students = new HashSet<>();
 		
 		set_of_students.add(new Student("Barack", "Obama"));
@@ -41,6 +43,7 @@ public class Main_HashSet {
 			
 			System.out.println(student);
 		}
+		*/
 	}
 
 }

@@ -1,12 +1,13 @@
 package fisa_de2_java.collections;
 
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Main_TreeSet {
 
 	public static void main(String[] args) {
 		
-		TreeSet<String> set_of_strings = new TreeSet<>();
+		Set<String> set_of_strings = new TreeSet<>();
 
 		set_of_strings.add("Rémy");
 		
@@ -16,7 +17,7 @@ public class Main_TreeSet {
 		
 		set_of_strings.add("Rémy");
 		
-		set_of_strings.remove("Daniel");
+		// set_of_strings.remove("Daniel");
 		
 		set_of_strings.add("Arthur");
 
