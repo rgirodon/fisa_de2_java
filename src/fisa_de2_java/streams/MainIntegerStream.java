@@ -1,12 +1,12 @@
 package fisa_de2_java.streams;
 
-import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MainIntegerStream {
 
 	public static void main(String[] args) {
 		
-		IntStream stream = IntegerStreamHelper.buildRandomIntegersStream(100);
+		Stream<Integer> stream = IntegerStreamHelper.buildRandomIntegersStream(10);
 		
 		System.out.println(IntegerStreamHelper.countEvenNumbersInStream(stream));
 	}

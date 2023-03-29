@@ -4,6 +4,6 @@ public class ConstructorMessageDisplayer {
 
 	public ConstructorMessageDisplayer(String message) {
 		
-		System.out.println(message);
+		System.out.println("[CONSTRUCTOR] : " + message);
 	}
 }

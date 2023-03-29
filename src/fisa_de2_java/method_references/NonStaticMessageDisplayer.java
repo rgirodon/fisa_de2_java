@@ -4,6 +4,6 @@ public class NonStaticMessageDisplayer {
 
 	public void displayMessage(String message) {
 		
-		System.out.println(message);
+		System.out.println("[NON STATIC] : " + message);
 	}
 }
