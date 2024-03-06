@@ -7,16 +7,7 @@ public abstract class Account {
 	private long number;
 	
 	private TypeAccount typeAccount;
-	
-	public Account() {
 		
-		this.balance = 0;
-		
-		this.number = 0;
-		
-		this.typeAccount = TypeAccount.CURRENT;
-	}
-	
 	public Account(double balance, long number, TypeAccount typeAccount) {
 		
 		this.balance = balance;
@@ -33,10 +24,9 @@ public abstract class Account {
 	
 	@Override
 	public String toString() {
-		
-		return "typeAccount=" + this.typeAccount + ", number=" + this.number + ", balance=" + this.balance;
+		return "balance=" + balance + ", number=" + number + ", typeAccount=" + typeAccount;
 	}
-	
+
 	public void withdraw(double amount) {
 		
 		if (this.checkWithdraw(amount)) {

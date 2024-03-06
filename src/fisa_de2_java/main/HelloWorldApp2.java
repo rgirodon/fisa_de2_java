@@ -1,17 +1,14 @@
 package fisa_de2_java.main;
 
+import java.util.ArrayList;
 
-import static fisa_de2_java.main.DemoStaticFields.*;
-
-import fisa_de2_java.model.Account;
-import fisa_de2_java.model.Circle;
-import fisa_de2_java.model.CircleService;
-import fisa_de2_java.model.CurrentAccount;
-import fisa_de2_java.model.Customer;
-import fisa_de2_java.model.ISalutationer;
-import fisa_de2_java.model.SalutationerFactory;
-import fisa_de2_java.model.SavingAccount;
-import fisa_de2_java.model.TypeAccount;
+import fisa_de2_java.model.Animal;
+import fisa_de2_java.model.AnimalManager;
+import fisa_de2_java.model.Cat;
+import fisa_de2_java.model.Chicken;
+import fisa_de2_java.model.Dog;
+import fisa_de2_java.model.Fish;
+import fisa_de2_java.model.Snake;
 
 /**
  * Classe de lancement du programme
@@ -127,14 +124,29 @@ public class HelloWorldApp2 {
 		salutationer.salute();
 		*/	
 				
+		Dog myDog = new Dog("Tao");
+		
+		System.out.println(myDog.getName());
 				
+		Cat myCat = new Cat();
+		
+		Fish myFish = new Fish();
+		
+		Chicken myChicken = new Chicken();
+		
+		Snake mySnake = new Snake();
+		
+		ArrayList<Animal> myPets = new ArrayList<Animal>();
+		myPets.add(myFish);
+		myPets.add(myCat);
+		myPets.add(myDog);	
+		myPets.add(myChicken);
+		myPets.add(mySnake);
 				
-				
-				
-				
-				
-				
-				
-				
+		AnimalManager.entertain(myPets);
+		
+		AnimalManager.rename(myDog, "Taigo");
+		
+		System.out.println(myDog.getName());
 	}
 }
