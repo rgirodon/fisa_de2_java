@@ -7,6 +7,7 @@ import fisa_de2_java.factory.AccountFactory;
 import fisa_de2_java.model.Account;
 import fisa_de2_java.model.CreditImpossibleException;
 import fisa_de2_java.model.CurrentAccount;
+import fisa_de2_java.model.FoolAccountHandler;
 import fisa_de2_java.model.IAccount;
 import fisa_de2_java.model.SavingAccount;
 import fisa_de2_java.model.TypeAccount;
@@ -41,10 +42,20 @@ public class Main_TD2_1 {
 		}		
 		a2.display();
 		
-		/*
-		Account a3 = new SavingAccount(3L, 300.0, 12000.0);
-		a3.credit(200.0);
-		a3.credit(1000.0);
+		
+		Account a3 = new SavingAccount(3L, 300.0, 1200.0);
+		try {
+			a3.credit(200.0);
+		} 
+		catch (CreditImpossibleException e) {
+			System.out.println("Crédit impossible sur " + a3.toString());
+		}
+		try {
+			a3.credit(1000.0);
+		} 
+		catch (CreditImpossibleException e) {
+			System.out.println("Crédit impossible sur " + a3.toString());
+		}
 		
 		List<Account> myList = new ArrayList<>();
 		myList.add(a1);
@@ -55,7 +66,8 @@ public class Main_TD2_1 {
 			
 			currentAccount.display();
 		}	
-		*/	
+	
+		FoolAccountHandler.foolHandling();
 	}
 
 }
