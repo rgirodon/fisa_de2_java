@@ -16,7 +16,7 @@ public interface IAccount {
 	
 	void setType(TypeAccount type);
 	
-	/*
+	
 	default boolean isPossibleWithdraw(double amount) {
 		
 		return true;
@@ -26,5 +26,5 @@ public interface IAccount {
 		
 		return true;
 	}
-	*/
+	
 }

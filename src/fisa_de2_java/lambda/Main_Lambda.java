@@ -13,7 +13,7 @@ public class Main_Lambda {
 	public static List<Person> DATA = new ArrayList<>();
 	
 	static {
-		DATA.add(new Person("A1", 10, Gender.MAN));
+		DATA.add(new Person("A1", 90, Gender.MAN));
 		DATA.add(new Person("A2", 12, Gender.WOMAN));
 		DATA.add(new Person("A3", 14, Gender.MAN));
 		DATA.add(new Person("A4", 16, Gender.WOMAN));
@@ -35,9 +35,10 @@ public class Main_Lambda {
 		DATA.add(new Person("V10", 48, Gender.NOT_EXPRESSED));
 	}
 	
+	/*
 	public static List<Person> findPersonsWithAgeLower(List<Person> persons, Integer age) {
 		
-		List<Person> result = new ArrayList<>();
+		List<Person> result DATA= new ArrayList<>();
 		
 		for (Person person : persons) {
 			
@@ -49,6 +50,8 @@ public class Main_Lambda {
 		
 		return result;
 	}
+	*/
+	
 	
 	public static List<Person> findPersons(List<Person> persons, PersonMatcher matcher) {
 		
@@ -65,17 +68,22 @@ public class Main_Lambda {
 		return result;
 	}
 	
+	
 	public static void main(String[] args) {
 		
 		/*
 		List<Person> minors = findPersonsWithAgeLower(DATA, 18);
 		
 		System.out.println(minors.size() + " persons found");
+		*/
 		
+		/*
 		List<Person> minorsWithConcreteClass = findPersons(DATA, new AgeLowerPersonMatcher());
 		
-		System.out.println(minorsWithConcreteClass.size() + " persons found with concrete class");
+		System.out.println(minorsWithConcreteClass.size() + " persons found with concrete class");/*
+		*/
 		
+		/*
 		List<Person> minorsWithInnerClass = findPersons(DATA, new PersonMatcher() {
 			
 			@Override
@@ -85,26 +93,35 @@ public class Main_Lambda {
 			}
 		});
 		
+		
 		System.out.println(minorsWithInnerClass.size() + " persons found with inner class");
-		
-		List<Person> minorsWithLambda = findPersons(DATA, person -> person.age <= 18);
-		
-		System.out.println(minorsWithLambda.size() + " persons found with lambda");
 		*/
 		
 		/*
-		List<String> strings = Arrays.asList("Rémy", "Olivier", "Girodon");
+		List<Person> minorsWithLambda = findPersons(DATA, person -> person.age <= 18);
 		
-		strings.forEach(
-				s -> System.out.println(s.length())
-		);
+		System.out.println(minorsWithLambda.size() + " minor persons found with lambda");
 		
 		
+		List<Person> girls = findPersons(DATA, person -> person.gender == Gender.WOMAN);
+		
+		System.out.println(girls.size() + " girls found with lambda");
+		*/
+		
+		
+		List<String> strings = Arrays.asList("Rémy", "Olivier", "Girodon", "Durand", "Arthur", "Miller", "Lee", "Li");
+		
+		strings.forEach(StringLengthPrinter::printLength);
+		
+		strings.forEach(System.out::println);
+		
+		/*
 		Collections.sort(DATA, (p1, p2) -> p2.age.compareTo(p1.age));
 		
 		System.out.println(DATA);
 		*/
 		
+		/*
 		Map<String, Integer> myMap = new HashMap<>();
 		myMap.put("Rémy", 4);
 		myMap.put("Olivier", 7);
@@ -116,5 +133,7 @@ public class Main_Lambda {
 		myMap.computeIfPresent("Arthur", (s, i) -> i*2);
 		
 		System.out.println(myMap.get("Arthur"));
+		*/
+		
 	}
 }

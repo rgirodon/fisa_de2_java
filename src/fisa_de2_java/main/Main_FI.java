@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import fisa_de2_java.model.BilingualSalutationer;
+import fisa_de2_java.model.TrilingualSalutationer;
+
 public class Main_FI {
 
 	public static void main(String[] args) {
@@ -35,14 +38,26 @@ public class Main_FI {
 		System.out.println(valueSquared);
 		*/
 		
+		/*
 		List<String> names = Arrays.asList("John", "Freddy", "Samuel");
 		
 		names.forEach(name -> System.out.println("Hello, " + name));
+		*/
+		
+		TrilingualSalutationer ts = new TrilingualSalutationer();		
+		System.out.println(ts.saluteInEnglish("Remy"));
+		System.out.println(ts.saluteInFrench("Remy"));
+		System.out.println(ts.saluteInSpanish("Remy"));
+		
+		BilingualSalutationer bs = new BilingualSalutationer();
+		System.out.println(bs.saluteInEnglish("Olivier"));
+		System.out.println(bs.saluteInFrench("Olivier"));
 	}
 	
+	/*
 	public static double square(Supplier<Double> lazyValue) {
 	    return Math.pow(lazyValue.get(), 2);
 	}
-
+	*/
 	
 }
