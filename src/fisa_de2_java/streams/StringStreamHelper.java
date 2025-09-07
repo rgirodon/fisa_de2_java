@@ -17,6 +17,11 @@ public class StringStreamHelper {
 		return stream.flatMap(line -> Arrays.stream(line.split(" ")));
 	}
 	
+	public static Stream<String> streamLinesFromFile(String fileName) throws IOException {
+		
+		return Files.lines(Paths.get(fileName));
+	}
+	
 	public static Collection<String> filterAndTransform(Stream<String> words) {
 		
 		Collection<String> result = words
@@ -28,5 +33,14 @@ public class StringStreamHelper {
 										.collect(Collectors.toList());
 		
 		return result;		
+	}
+	
+	public static Collection<String> keepShortLines(Stream<String> lines) {
+		
+		Collection<String> result = lines
+										.filter(s -> s.split(" ").length <= 4)
+										.collect(Collectors.toList());
+		
+		return result;
 	}
 }

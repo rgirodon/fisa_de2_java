@@ -8,7 +8,7 @@ public class MainIntegerStream {
 		
 		Stream<Integer> stream = IntegerStreamHelper.buildRandomIntegersStream(10);
 		
-		System.out.println(IntegerStreamHelper.countEvenNumbersInStream(stream));
+		System.out.println(IntegerStreamHelper.sumNumbersWithCubeEvenInStream(stream));
 	}
 
 }
