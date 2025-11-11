@@ -1,6 +1,6 @@
 package fisa_de2_java.model;
 
-public class Account {
+abstract public class Account {
 
 	private double balance;
 	
@@ -8,21 +8,12 @@ public class Account {
 	
 	private TypeAccount type;
 	
-	private double plafond;
-	
-	private double decouvertAutorise;
-	
+
 	public Account() {
 		
 		this.balance = 0.0;
 		
 		this.number = 0L;
-		
-		this.type = TypeAccount.CURRENT;
-		
-		this.decouvertAutorise = 0.0;
-		
-		this.plafond = 0.0;
 	}
 	
 	public Account(double balance, long number) {
@@ -30,16 +21,9 @@ public class Account {
 		this.balance = balance;
 		
 		this.number = number;
-		
-		this.type = TypeAccount.CURRENT;
-		
-		this.decouvertAutorise = 0.0;
-		
-		this.plafond = 0.0;
-	}
+	}	
 
 	
-
 	public void display() {
 		
 		System.out.println("Account [type=" + this.type + ", number=" + this.number + ", balance=" + this.balance + "]");
@@ -56,26 +40,7 @@ public class Account {
 		}
 	}
 	
-	private boolean isPossibleWithdraw(double amount) {
-
-		boolean result = true;
-		
-		if (this.type == TypeAccount.SAVINGS) {
-			
-			if ((this.balance - amount) < 0.0) {
-				
-				result = false;
-			}
-		}
-		else {
-			if ((this.balance - amount) < (-this.decouvertAutorise)) {
-				
-				result = false;
-			}
-		}
-		
-		return result;
-	}
+	abstract public boolean isPossibleWithdraw(double amount);
 
 	public void credit(double amount) {
 		
@@ -87,21 +52,9 @@ public class Account {
 			System.out.println("Credit impossible");
 		}
 	}
+	
+	abstract public boolean isPossibleCredit(double amount);
 
-	private boolean isPossibleCredit(double amount) {
-		
-		boolean result = true;
-		
-		if (this.type == TypeAccount.SAVINGS) {
-			
-			if ((this.balance + amount) > this.plafond) {
-				
-				result = false;
-			}
-		}
-		
-		return result;
-	}
 
 	public double getBalance() {
 		return balance;
@@ -121,21 +74,5 @@ public class Account {
 
 	public void setType(TypeAccount type) {
 		this.type = type;
-	}
-	
-	public double getPlafond() {
-		return plafond;
-	}
-
-	public void setPlafond(double plafond) {
-		this.plafond = plafond;
-	}
-
-	public double getDecouvertAutorise() {
-		return decouvertAutorise;
-	}
-
-	public void setDecouvertAutorise(double decouvertAutorise) {
-		this.decouvertAutorise = decouvertAutorise;
 	}
 }
