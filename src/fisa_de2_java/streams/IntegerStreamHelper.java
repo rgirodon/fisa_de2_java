@@ -30,8 +30,11 @@ public class IntegerStreamHelper {
 		*/
 		
 		return intStream
+				.peek(System.out::println)
 				.map(nb -> (int)Math.pow(nb, 3))
+				.peek(System.out::println)
 				.filter(nb -> nb % 2 == 0)
+				.peek(System.out::println)
 				.reduce((a,b) -> a+b)
 				.orElse(0);
 	}
