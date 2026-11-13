@@ -176,6 +176,7 @@ public class Main {
 		}
 		*/
 		
+		/*
 		HashMap<Long, Student> students = new HashMap<>();
 		
 		Student s1 = new Student(111L, "Rémy");		
@@ -204,7 +205,7 @@ public class Main {
 		names.add("Rémy");
 		
 		System.out.println(names.size());
-		
+		*/
 	}
 
 }
