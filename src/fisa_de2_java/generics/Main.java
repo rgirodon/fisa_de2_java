@@ -2,7 +2,10 @@ package fisa_de2_java.generics;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -69,18 +72,20 @@ public class Main {
 
 		System.out.println("Retrieved without generics : " + retrieved_without_generics + " / " + str_retrieved_without_generics);
 
+		
 		// With generics
 
-		List<Integer> list_with_generics = new ArrayList<>();
+		List<String> list_with_generics = new ArrayList<>();
 
 		Integer added_with_generics = Integer.valueOf(1);
 		
-		list_with_generics.add(added_with_generics);
+		list_with_generics.add(str_added_without_generics);
 		
-		Integer retrieved_with_generics = list_with_generics.get(0);
+		String retrieved_with_generics = list_with_generics.get(0);
 
 		System.out.println("Retrieved with generics : " + retrieved_with_generics);
 		*/
+		
 		
 		/*
 		// calls to generic method
@@ -103,7 +108,7 @@ public class Main {
 		}
 		*/
 		
-		
+		/*
 		Box<Integer, String> box1 = new Box<>();
 		box1.add(Integer.valueOf(10), "Hello World");
 		System.out.println("Integer Value : " + box1.getFirst());
@@ -118,6 +123,7 @@ public class Main {
 		box3.add(new Cat(), new Dog());
 		System.out.println("Cat Value : " + box3.getFirst());
 		System.out.println("Dog Value : " + box3.getSecond());
+		*/
 		
 		/*
 		Cat[] cats_array = {
@@ -169,6 +175,35 @@ public class Main {
 			System.out.println(animal);
 		}
 		*/
+		
+		HashMap<Long, Student> students = new HashMap<>();
+		
+		Student s1 = new Student(111L, "Rémy");		
+		students.put(s1.getNumeroSecuriteSociale(), s1);
+		
+		Student s2 = new Student(222L, "Arthur");		
+		students.put(s2.getNumeroSecuriteSociale(), s2);
+		
+		Student s3 = new Student(333L, "Léon");		
+		students.put(s3.getNumeroSecuriteSociale(), s3);
+		
+		Student s4 = new Student(444L, "Jean");		
+		students.put(s4.getNumeroSecuriteSociale(), s4);
+		
+		System.out.println("For key 222L : " + students.get(222L).getName());
+		
+		for (Long numeroSecuriteSociale : students.keySet()) {
+			
+			System.out.println(numeroSecuriteSociale + " => " + students.get(numeroSecuriteSociale).getName());
+		}
+		
+		
+		HashSet<String> names = new HashSet<>();
+		names.add("Rémy");
+		names.add("Léo");
+		names.add("Rémy");
+		
+		System.out.println(names.size());
 		
 	}
 
